@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "poppins", sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main-container {
+    padding: 30px;
+    background: rgb(96, 15, 96);
+    width: 40vw;
+    height: 70vh;
+    border-radius: 10px;
+
+}
+
+.main-container h1 {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+.short{
+    font-size: 18px;
+    font-weight: 500;
+}
+.upper-container input {
+    padding: 5px;
+    margin: 5px 0;
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 24px;
+    border-radius: 7px;
+}
+
+.upper-container {
+    height: 65px;
+}
+
+.main-container h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+#saveBtn {
+    height: 34px;
+
+}
+
+.btn {
+    border-radius: 7px;
+    border: none;
+    padding: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    background-color: rgb(44, 97, 222);
+}
+
+.btn:hover {
+    background-color: rgb(4, 72, 230);
+
+}
+
+.validation {
+    color: red;
+    font-size: 13px;
+
+}
+.todos{
+    overflow-y: auto;
+    height: 250px;
+
+}
+.todos ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.todos ul li {
+    border: 1px solid black;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.todos ul li span {
+    width: 320px;
+}
+
+@media screen and (max-width: 765px) {
+    .upper-container {
+        height: 110px;
+    }
+
+    .upper-container div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .upper-container div input,
+    #saveBtn {
+        width: 100%;
+
+    }
+}
