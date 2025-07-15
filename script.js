@@ -14,17 +14,28 @@ function saveData() {
 }
 function loadData() {
     let loadD = localStorage.getItem("todos")
-    todosList.innerHTML += loadD
+    console.log(loadD);
+    
+    if (loadD.trim() != "null") {
+        todosList.innerHTML += loadD;
+
+    } else {
+        todosList.innerHTML = "No todos available"
+        console.log(todosList.innerHTML)
+    }
 
 }
 
 loadData();
 
-
 saveButton.addEventListener("click", () => {
     todoValue = inputBox.value;
+
     if (inputBox.value.length > 3) {
 
+        if (todosList.innerHTML.includes("No todos available")) {
+            todosList.innerHTML = ""
+        }
         todosList.innerHTML += ` <li><input type="checkbox"  id="checkDone" ><span>${todoValue}</span>
                             <div class="buttons">
                                 <button id="editBtn" class="btn editBtn">Edit</button>
@@ -32,17 +43,24 @@ saveButton.addEventListener("click", () => {
                             </div>
                         </li>`
         inputBox.value = "";
-
-       
         saveData()
     } else {
         validation.innerHTML = "More than 3 characters are must!"
     }
 
+
+})
+
+inputBox.addEventListener("keypress", (e) => {
+    console.log(inputBox.value, e.target.value)
+    if (inputBox.value.length < 3) {
+        validation.innerHTML = "More than 3 characters are must!";
+    } else {
+        validation.innerHTML = "";
+    }
 })
 
 todosList.addEventListener("click", (e) => {
-
     if (e.target.classList.contains("editBtn")) {
         console.log(e.target.parentElement.previousElementSibling.innerHTML)
         inputBox.value = e.target.parentElement.previousElementSibling.innerHTML;
@@ -51,6 +69,10 @@ todosList.addEventListener("click", (e) => {
     }
     if (e.target.classList.contains("deleteBtn")) {
         e.target.parentElement.parentElement.remove()
+        if(todosList.innerHTML.trim()==""){
+              todosList.innerHTML = "No todos available";
+        }
+        console.log(todosList.innerHTML)
         saveData();
     }
     if (e.target.id === "checkDone") {
