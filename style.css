@@ -15,14 +15,14 @@
     justify-content: center;
     align-items: center;
     color: white;
-
+    background: #31363d;
 }
 
 .main-container {
     color: white;
     padding: 30px;
-    background: rgb(96, 15, 96);
-   width: 50vw;
+    background-image: linear-gradient(to bottom, #0093ff,#0fccce);
+    width: 50vw;
     height: 80vh;
     border-radius: 10px;
 
@@ -88,7 +88,7 @@
 
 .todos {
     overflow-y: auto;
-  height: 41vh;
+    height: 41vh;
     color: white;
 
 }
@@ -121,50 +121,58 @@
 .todos ul li span {
     width: 320px;
 }
-@media screen and (max-width: 1240px){
-.todos{
-    height: 37.5vh;
+
+@media screen and (max-width: 1240px) {
+    .todos {
+        height: 37.5vh;
+    }
 }
-}
-@media screen and (max-width: 1055px){
-    .main-container{
+
+@media screen and (max-width: 1055px) {
+    .main-container {
         width: 60vw;
     }
 
 }
-@media screen and (max-width: 880px){
-    .main-container{
+
+@media screen and (max-width: 880px) {
+    .main-container {
         width: 70vw;
     }
 
 }
-@media screen and (max-width: 780px){
-    .main-container{
+
+@media screen and (max-width: 780px) {
+    .main-container {
         width: 100vw;
         height: 100vh;
         border-radius: 0;
     }
-.todos{
-    height: 45vh;
-}
+
+    .todos {
+        height: 45vh;
+    }
+
     .upper-container {
         height: 110px;
     }
-    .upper-container input{
+
+    .upper-container input {
         height: 40px;
     }
+
     .upper-container div {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
     }
-    
+
     .upper-container div input,
     #saveBtn {
         width: 100%;
-    
+
     }
 }
-@media screen and (max-width: 765px) {
-}
+
+@media screen and (max-width: 765px) {}
