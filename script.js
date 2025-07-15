@@ -14,14 +14,14 @@ function saveData() {
 }
 function loadData() {
     let loadD = localStorage.getItem("todos")
-    console.log(loadD);
-    
+
+
     if (loadD.trim() != "null") {
         todosList.innerHTML += loadD;
 
     } else {
         todosList.innerHTML = "No todos available"
-        console.log(todosList.innerHTML)
+
     }
 
 }
@@ -52,7 +52,7 @@ saveButton.addEventListener("click", () => {
 })
 
 inputBox.addEventListener("keypress", (e) => {
-    console.log(inputBox.value, e.target.value)
+
     if (inputBox.value.length < 3) {
         validation.innerHTML = "More than 3 characters are must!";
     } else {
@@ -62,17 +62,15 @@ inputBox.addEventListener("keypress", (e) => {
 
 todosList.addEventListener("click", (e) => {
     if (e.target.classList.contains("editBtn")) {
-        console.log(e.target.parentElement.previousElementSibling.innerHTML)
         inputBox.value = e.target.parentElement.previousElementSibling.innerHTML;
         e.target.parentElement.parentElement.remove()
         saveData();
     }
     if (e.target.classList.contains("deleteBtn")) {
         e.target.parentElement.parentElement.remove()
-        if(todosList.innerHTML.trim()==""){
-              todosList.innerHTML = "No todos available";
+        if (todosList.innerHTML.trim() == "") {
+            todosList.innerHTML = "No todos available";
         }
-        console.log(todosList.innerHTML)
         saveData();
     }
     if (e.target.id === "checkDone") {
